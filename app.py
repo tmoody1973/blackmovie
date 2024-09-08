@@ -147,9 +147,12 @@ def welcome_screen():
         st.session_state.streak = 0
         st.session_state.start_time = time.time()
         st.session_state.page = 'quiz'
-        st.session_state.question_data = generate_trivia_question()
+        st.query_params['page'] = 'quiz'
+        st.rerun()
     if st.button("Leaderboard"):
         st.session_state.page = 'leaderboard'
+        st.query_params['page'] = 'leaderboard'
+        st.rerun()
 
 # Quiz interface
 def quiz_interface():
@@ -279,6 +282,10 @@ def theme_customization():
 # Main app logic
 if 'page' not in st.session_state:
     st.session_state.page = 'welcome'
+
+# Check if there's a page query parameter
+if 'page' in st.query_params:
+    st.session_state.page = st.query_params['page']
 
 if st.session_state.page == 'welcome':
     welcome_screen()
