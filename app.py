@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 import os
 import json
 import random
-
+#branch test
 # Set custom theme
 st.set_page_config(
     page_title="Black Cinema Trivia",
@@ -21,6 +21,9 @@ load_dotenv()
 # Get API keys from environment variables
 OMDB_API_KEY = os.getenv('OMDB_API_KEY')
 CLAUDE_API_KEY = os.getenv('CLAUDE_API_KEY')
+
+# Debug: Print the API key to verify it's loaded correctly
+print(f"CLAUDE_API_KEY: {CLAUDE_API_KEY}")
 
 # Initialize session state
 if 'score' not in st.session_state:
