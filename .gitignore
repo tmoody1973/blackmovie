@@ -38,4 +38,5 @@ Thumbs.db
 # Streamlit secrets
 secrets.toml
 
+leaderboard.db
 
