@@ -195,7 +195,7 @@ def quiz_interface():
         st.session_state.start_time = time.time()
         st.session_state.question_data = generate_trivia_question()
         time.sleep(2)  # Give the user time to see the result
-        st.experimental_rerun()
+        st.rerun()
 
     # Progress bar
     total_questions = 10  # Assuming a total of 10 questions
