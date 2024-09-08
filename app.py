@@ -2,7 +2,6 @@ import streamlit as st
 import requests
 import sqlite3
 import time
-from dotenv import load_dotenv
 import os
 import json
 import random
@@ -15,12 +14,9 @@ st.set_page_config(
     initial_sidebar_state="collapsed"
 )
 
-# Load environment variables from .env file
-load_dotenv()
-
 # Get API keys from environment variables
-OMDB_API_KEY = os.getenv('OMDB_API_KEY')
-CLAUDE_API_KEY = os.getenv('CLAUDE_API_KEY')
+OMDB_API_KEY = st.secrets["OMDB_API_KEY"]
+CLAUDE_API_KEY = st.secrets["CLAUDE_API_KEY"]
 
 # Debug: Print the API key to verify it's loaded correctly
 print(f"CLAUDE_API_KEY: {CLAUDE_API_KEY}")
