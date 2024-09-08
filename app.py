@@ -180,7 +180,7 @@ def quiz_interface():
         st.session_state.question_index += 1
         st.session_state.start_time = time.time()
         st.session_state.question_data = generate_trivia_question()
-        st.experimental_rerun()
+        st.rerun()
 
     if st.button("Submit"):
         if st.session_state.user_answer == answer:
